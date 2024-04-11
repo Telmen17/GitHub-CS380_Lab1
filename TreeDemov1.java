@@ -1,3 +1,7 @@
+/**
+ *A node class for the BST.
+ * @author Telmen Enkhtuvshin
+ */
 class Node{
 	   int value;
 	   Node left, right;
@@ -10,18 +14,17 @@ class Node{
 
 	}
 
-	class BinarySearchTree{
+/**
+ *Class for the BST.
+ */
+class BinarySearchTree{
 
 	   Node root;
-	  
-	   
-	   /*
-	   recursive insert method
-		
-	   */
-	   /*
-	   inserts a node into the tree
-	   */
+
+	/**
+	 *Inserts the node into the tree.
+	 * @param value The integer value to be inserted into the BST.
+	 */
 	   public void insert(int value){
 	      //tree is empty
 	      if(root == null){
@@ -52,23 +55,30 @@ class Node{
 	      
 	      }//closing main if-else 
 	   }
-	   
-	   /*
-	   pre-order traversal
-	   Prints the value of every node preorder
-	   */
+
+	/**
+	 *A method which traverses the BST and prints out the nodes in preorder.
+	 * @param root The root node of the BST.
+	 */
 	   public void preOrderTraversal(Node root){
-		//implement in here
-		   
+		   //Preorder: Current, Left, Right
+		   if (root != null) {
+			   //Printing current value
+			   System.out.println(root.value + " ");
+			   //Traversing left subtree
+			   preOrderTraversal(root.left);
+			   //Traversing right subtree
+			   preOrderTraversal(root.right);
+		   }
 	   }
 
-	   
-	   
-	   /*
-	   in-order traversal
-	   */
-	   public void inOrderTraversal(Node root){
-	      //implement in here
+
+	/**
+	 * A method which traverses the BST and prints out the nodes as inorder.
+	 * @param root The root node of the BST
+	 */
+	public void inOrderTraversal(Node root){
+
 	   }
 	   
 	   
@@ -154,7 +164,7 @@ class Node{
 
 
 
-	public class TreeDemo{
+	public class TreeDemov1{
 	   public static void main(String[] args){
 	      BinarySearchTree t1  = new BinarySearchTree();
 	      t1.insert( 24);
