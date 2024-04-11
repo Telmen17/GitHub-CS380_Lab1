@@ -75,9 +75,17 @@ class BinarySearchTree{
 
 	/**
 	 * A method which traverses the BST and prints out the nodes as inorder.
-	 * @param root The root node of the BST
+	 * @param root The root node of the BST.
 	 */
 	public void inOrderTraversal(Node root){
+		//Preorder: Left, Current, Right
+		if (root != null) {
+			//Traversing left subtree
+			inOrderTraversal(root.left);
+			//Printing current value
+			System.out.println(root.value + " ");
+			//Traversing right subtree
+			inOrderTraversal(root.right);
 
 	   }
 	   
