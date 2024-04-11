@@ -80,7 +80,7 @@ class BinarySearchTree{
 			//Traversing left subtree
 			inOrderTraversal(root.left);
 			//Printing current value
-			System.out.println(root.value + " ");
+			System.out.print(root.value + " ");
 			//Traversing right subtree
 			inOrderTraversal(root.right);
 		}
@@ -130,7 +130,7 @@ class BinarySearchTree{
 	/**
 	 * A method to find the node in the tree with the smallest key.
 	 * @param root The root node of the BST.
-	 * @return The smallest key in the BST.
+	 * @return The smallest value in the BST.
 	 */
 	public int getMin(Node root) {
 		//Empty BST
@@ -143,21 +143,32 @@ class BinarySearchTree{
 		while (cur.left != null) {
 			cur = cur.left;
 		}
+		//Returning the smallest value
 		return cur.value;
 	}
-	  
-	  
-	  
-	   /*
-	   a method to find the node in the tree
-	   with a largest key
-	   */
-	   public int getMax(Node root){
-         //implement in here
+
+
+	/**
+	 * A method to find the node in the tree with the largest key.
+	 * @param root The root node of the BST
+	 * @return The largest value in the BST
+	 */
+	public int getMax(Node root){
+		//Empty BST
+		if (root == null){
+			throw new IllegalArgumentException("The BST is empty.");
+		}
+		//Current node variable
+		Node cur = root;
+		//BST traversal
+		while (cur.right != null) {
+			cur = cur.right;
+		}
+		//Returning the largest value
+		return cur.value;
 	   }
 	   
-	   
-	   
+
 	   /*
 	   this method will not compile until getMax
 	   is implemented
