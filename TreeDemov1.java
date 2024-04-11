@@ -167,13 +167,15 @@ class BinarySearchTree{
 		//Returning the largest value
 		return cur.value;
 	   }
-	   
 
-	   /*
-	   this method will not compile until getMax
-	   is implemented
-	   */
-	   public Node delete(Node root, int key){
+
+	/**
+	 * A delete method that deletes the desired key from the BST.
+	 * @param root The root node of the BST.
+	 * @param key The integer value of the key to be deleted.
+	 * @return Returns the root node of the BST.
+	 */
+	public Node delete(Node root, int key){
 	      
 	      if(root == null){
 	         return root;
@@ -200,9 +202,6 @@ class BinarySearchTree{
 	      }
 	      return root;  
 	   }
-	   
-	   
-	   
 	}
 
 
