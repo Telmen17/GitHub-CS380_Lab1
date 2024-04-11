@@ -21,10 +21,10 @@ class BinarySearchTree{
 
 	   Node root;
 
-	/**
-	 *Inserts the node into the tree.
-	 * @param value The integer value to be inserted into the BST.
-	 */
+	   /**
+	 	*Inserts the node into the tree.
+	 	* @param value The integer value to be inserted into the BST.
+	 	*/
 	   public void insert(int value){
 	      //tree is empty
 	      if(root == null){
@@ -56,10 +56,10 @@ class BinarySearchTree{
 	      }//closing main if-else 
 	   }
 
-	/**
-	 *A method which traverses the BST and prints out the nodes in preorder.
-	 * @param root The root node of the BST.
-	 */
+	   /**
+	 	*A method which traverses the BST and prints out the nodes in preorder.
+	 	* @param root The root node of the BST.
+	 	*/
 	   public void preOrderTraversal(Node root){
 		   //Preorder: Current, Left, Right
 		   if (root != null) {
@@ -71,45 +71,64 @@ class BinarySearchTree{
 			   preOrderTraversal(root.right);
 		   }
 	   }
-
-
-	/**
-	 * A method which traverses the BST and prints out the nodes as inorder.
-	 * @param root The root node of the BST.
-	 */
-	public void inOrderTraversal(Node root){
-		//Preorder: Left, Current, Right
-		if (root != null) {
-			//Traversing left subtree
-			inOrderTraversal(root.left);
-			//Printing current value
-			System.out.println(root.value + " ");
-			//Traversing right subtree
-			inOrderTraversal(root.right);
-
+	   /**
+	 	* A method which traverses the BST and prints out the nodes as inorder.
+	 	* @param root The root node of the BST.
+	 	*/
+	   public void inOrderTraversal(Node root) {
+		   //Inorder: Left, Current, Right
+			if (root != null) {
+				//Traversing left subtree
+				inOrderTraversal(root.left);
+				//Printing current value
+				System.out.println(root.value + " ");
+				//Traversing right subtree
+				inOrderTraversal(root.right);
+			}
 	   }
-	   
-	   
-	   
-	   /*
-	   post-order traversal
-	   */
-	  
-	   public void postOrderTraversal(Node root){
-         //implement in here
+
+
+	    /**
+	 	 * A method which traverses the BST and prints out the nodes as postorder.
+	 	 * @param root The root node of the BST.
+	 	 */
+		public void postOrderTraversal(Node root) {
+			//Postorder: Left, Right, Current
+			if (root != null) {
+				//Traversing left subtree
+				postOrderTraversal(root.left);
+				//Traversing right subtree
+				postOrderTraversal(root.right);
+				//Printing current value
+				System.out.println(root.value + " ");
+			}
 		   
 	   }
-	   
-	   
-	   
-	   /*
-	   a method to find the node in the tree
-	   with a specific value
-	   */
-	   public boolean find(Node root, int key){
-		 //implement in here
-		  
-	   }
+
+
+	    /**
+	 	 * A method to find the node in the tree with a specific value.
+		 * @param root The root node of the BST.
+	 	 * @param key The value to find in the BST
+	 	 * @return Returns true if the node is found, or false if it is not found.
+	 	 */
+		public boolean find(Node root, int key){
+			//If the current node is null, return false
+			if (root == null){
+				return false;
+			}
+			//If the current node is found, return true
+			if (key == root.value){
+				return true;
+			}
+			//If the key is less, traverse left
+			if (key < root.value) {
+				return find(root.left, key);
+			}else {
+				//If the key is larger, traverse right
+				return find(root.right, key);
+			}
+		}
 	   
 	   
 	   
